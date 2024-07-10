@@ -35,13 +35,15 @@ const App = () => {
 
                                     <Route exact path="/story/:slug" element={<DetailStory />} />
 
-                                    <Route exact path='/addstory' element={<AddStory />} /> 
-      
+                                   
+                                    <Route exact path='/addstory' element={<PrivateRoute />}>
+                                          <Route exact path='/addstory' element={<addstory />} />
+                                    </Route>
 
-                                    {/* <Route exact path='/profile' element={<PrivateRoute />}>
+                                     <Route exact path='/profile' element={<PrivateRoute />}>
                                           <Route exact path='/profile' element={<Profile />} />
-                                    </Route> */}
-                                    <Route exact path='/profile' element={<Profile />} />
+                                    </Route> 
+                                   
 
                                     <Route exact path='/edit_profile' element={<PrivateRoute />}>
                                           <Route exact path='/edit_profile' element={<EditProfile />} />
